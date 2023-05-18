@@ -6,6 +6,7 @@ import jakarta.validation.constraints.NotNull;
 import lombok.*;
 import org.hibernate.validator.constraints.UniqueElements;
 
+import java.util.HashSet;
 import java.util.Set;
 
 @Getter
@@ -28,6 +29,6 @@ public class Role {
 
     @ManyToMany(mappedBy = "roles")
     @ToString.Exclude
-    private Set<User> users;
+    private Set<User> users = new HashSet<>();
 
 }
